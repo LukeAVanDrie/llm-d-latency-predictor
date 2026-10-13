@@ -70,3 +70,8 @@ jobs:
               assert spec is not None, f'{mod} not found'
               print(f'{mod}: {spec.origin}')
           "
+
+      - name: Run unit tests
+        run: |
+          pip install pytest --quiet
+          pytest tests/test_training_server.py -v
